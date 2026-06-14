@@ -1,4 +1,27 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="hello_everyone">hello everyone</string>
+    <string name="app_name">Profile UI Showcase</string>
+    <string name="user_name">Johan Smith</string>
+    <string name="location">California, USA</string>
+
+    <!-- Stats -->
+    <string name="balance">Balance</string>
+    <string name="orders">Orders</string>
+    <string name="total_spent">Total Spent</string>
+    <string name="val_balance">$14.00</string>
+    <string name="val_orders">10</string>
+    <string name="val_spent">$120.0</string>
+
+    <!-- Menu Items -->
+    <string name="menu_personal">Personal Information</string>
+    <string name="menu_order">Your Order</string>
+    <string name="menu_favourites">Your Favourites</string>
+    <string name="menu_payment">Payment</string>
+    <string name="menu_shops_recommended">Recommended Shops</string>
+    <string name="menu_shops_nearest">Nearest Shop</string>
+    <string name="menu_logout">Logout</string>
+
+    <!-- Content Descriptions -->
+    <string name="desc_back">Back</string>
+    <string name="desc_edit">Edit</string>
+    <string name="desc_profile">Profile Picture</string>
 </resources>

@@ -1,47 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<application
-    android:allowBackup="true"
-    android:dataExtractionRules="@xml/data_extraction_rules"
-    android:fullBackupContent="@xml/backup_rules"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.MyApplication">
-    <activity
-        android:name=".java.LoginClass"
-        android:exported="false" />
-    <activity
-        android:name=".java.MainActivity"
-        android:exported="false" />
-    <activity
-        android:name=".java.RegisterActivity"
-        android:exported="true"
-        android:theme="@style/Theme.AppCompat">
-        <!--        <inter-ilter>-->
-        <!--            <action android:name="andreid.intent.action.MAIN"/>-->
-        <!--            <category android:name="android.intent.category.LAUNCHER"/>-->
-        <!--        </inter-ilter>-->
-    </activity>
-    <activity
-        android:name=""
-        android:exported="true"
-        android:theme="@style/Theme.AppCompat" />
-    <activity
-        android:name=".egisterActivity"
-        android:exported="false" />
-</application>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
 
-</manifest>
+        <!-- Main Entry Point: RelativeLayout Profile -->
+        <activity
+            android:name=".RelativeProfileActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-<application>
-    <activity
-        android:name="com.example.myapplication.ui.FirstWiseEngActivity"
-        android:exported="false"
+        <!-- ConstraintLayout Profile -->
+        <activity
+            android:name=".ConstraintProfileActivity"
+            android:exported="false" />
 
-        />
-</application>
+    </application>
+
 </manifest>

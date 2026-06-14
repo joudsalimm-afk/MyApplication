@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/desc_back"
+            android:src="@android:drawable/ic_menu_revert"
+            app:tint="@color/teal_primary" />
+
+        <ImageView
+            android:id="@+id/btnEdit"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/desc_edit"
+            android:src="@android:drawable/ic_menu_edit"
+            app:tint="@color/teal_primary" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomNav"
+        android:layout_below="@id/topBar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:paddingBottom="40dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profileImg"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                android:src="@android:drawable/sym_def_app_icon"
+                app:shapeAppearanceOverlay="@style/CircleImage"
+                app:strokeColor="@color/teal_primary"
+                app:strokeWidth="2dp" />
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profileImg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="@string/location"
+                android:textColor="@color/gray_text" />
+
+            <LinearLayout
+                android:id="@+id/statsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLocation"
+                android:layout_marginTop="32dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_stat_bg"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/txtBalanceVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/val_balance"
+                        android:textColor="@color/teal_primary"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtBalanceVal"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/balance"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_stat_bg"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/txtOrdersVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/val_orders"
+                        android:textColor="@color/teal_primary"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtOrdersVal"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/orders"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_stat_bg"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/txtSpentVal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/val_spent"
+                        android:textColor="@color/teal_primary"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtSpentVal"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/total_spent"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/menuList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/statsRow"
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic1" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_menu_info_details" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic1" android:text="@string/menu_personal" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic2" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_menu_agenda" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic2" android:text="@string/menu_order" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic3" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/btn_star_big_on" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic3" android:text="@string/menu_favourites" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic4" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_menu_send" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic4" android:text="@string/menu_payment" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic5" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_menu_mylocation" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic5" android:text="@string/menu_shops_recommended" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic6" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_dialog_map" app:tint="@color/teal_primary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic6" android:text="@string/menu_shops_nearest" android:textColor="@color/black" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:contentDescription="@null" android:src="@drawable/ic_chevron_right" app:tint="@color/divider" />
+                </RelativeLayout>
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/light_gray_bg" />
+
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                    <ImageView android:id="@+id/ic7" android:layout_width="24dp" android:layout_height="24dp" android:contentDescription="@null" android:src="@android:drawable/ic_lock_power_off" app:tint="@color/logout_red" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="16dp" android:layout_toEndOf="@id/ic7" android:text="@string/menu_logout" android:textColor="@color/logout_red" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoToConstraint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/menuList"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/teal_primary"
+                android:text="View ConstraintLayout Version"
+                app:cornerRadius="8dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:elevation="12dp"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:contentDescription="@null" android:padding="20dp" android:src="@android:drawable/ic_menu_today" app:tint="@color/teal_primary" />
+        <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:contentDescription="@null" android:padding="20dp" android:src="@android:drawable/ic_popup_reminder" />
+        <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:contentDescription="@null" android:padding="20dp" android:src="@android:drawable/ic_menu_view" />
+        <ImageView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:contentDescription="@null" android:padding="20dp" android:src="@android:drawable/ic_menu_myplaces" />
+    </LinearLayout>
+
+</RelativeLayout>
